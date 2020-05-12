@@ -18,7 +18,9 @@
  		DOB:moment(req.body.date).format('DD-MM-YYYY'),
  		Mobile:req.body.number
  	}
- 	colec.insert(Data,function(err,docs){
+ 	var datat=moment().format('DD-MM-YYYY');
+ 	console.log(datat);
+ 	colec.insert(Data,function(err,docs) {
  		if(err){
  			console.log(err);
  		}
@@ -32,7 +34,8 @@
  /*retrive data*/
  router.get('/getdetailes',function(req,res){
 
- 	colec.find({},function(err,docs){
+ 	// colec.find({}.sort({'date':-1}),function(err,docs){
+ 		colec.find({},function(err,docs){
 
  		if(err){
  			console.log("err");
