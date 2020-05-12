@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SENDING BIRTHDAY WISHES</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script type="text/javascript" src="javascripts/birthday.js"></script>
+</head>
+<body ng-app="birthdayApp">
+<div class="container">
+
+<div ng-controller="MyCtrl">
+<h2 class="text-center">Birthday Registrations</h2>
+<form class="form-group col-md-4 col-md-offset-4">
+	<label>Name</label>
+	<input class="form-control" type="text" ng-model="birth.name"><br>
+	<label>Email</label>
+	<input class="form-control" type="email" ng-model="birth.email"><br>
+	<label>Date of Birth</label>
+	<input class="form-control" type="date" ng-model="birth.date"><br>
+	<label>Mobile Number</label>
+	<input class="form-control" type="text" ng-model="birth.number"><br>
+	<br>
+	<button class="btn btn-primary" ng-click='sendmail(birth)'>submit</button>
+</form>
+<table class="table table-bordered table-responsive">
+	<thead>
+
+		<tr>
+			<th>Sno</th>
+			<th>Name</th>
+			<th>email</th>
+			<th>Dob</th>
+			<th>mobile</th>
+			<th>actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="birth in birthdays">
+			<td>{{$index+1}}</td>
+			<td>{{birth.name}}</td>
+			<td>{{birth.email}}</td>
+			<td>{{birth.date}}</td>
+			<td>{{birth.number}}</td>
+			<td>
+				<i class="btn btn-primary glyphicon glyphicon-edit" ng-hide="" ng-click=""></i>
+				<i class="btn btn-success glyphicon glyphicon-ok" ng-show="" ng-click=""></i>
+				<i class="btn btn-danger glyphicon glyphicon-trash" ng-click=""></i>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
