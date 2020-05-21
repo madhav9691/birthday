@@ -38,12 +38,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="birth in birthdays">
+		<tr ng-repeat="b in birthdays">
 			<td>{{$index+1}}</td>
-			<td>{{birth.name}}</td>
-			<td>{{birth.email}}</td>
-			<td>{{birth.date}}</td>
-			<td>{{birth.number}}</td>
+			<td>{{b.Name}}</td>
+			<td>{{b.Email}}</td>
+			<td>{{b.DOB}}</td>
+			<td>{{b.Mobile}}</td>
 			<td>
 				<i class="btn btn-primary glyphicon glyphicon-edit" ng-hide="" ng-click=""></i>
 				<i class="btn btn-success glyphicon glyphicon-ok" ng-show="" ng-click=""></i>

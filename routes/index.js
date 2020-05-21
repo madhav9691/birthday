@@ -8,17 +8,17 @@
  /* GET home page. */
  router.get('/', function(req, res) {
  	res.render('index');
- });
+  });
 
  router.post('/postbirthday',function(req,res){
  	console.log(req.body);
  	var Data={
  		Name:req.body.name,
  		Email:req.body.email,
- 		DOB:moment(req.body.date).format('DD-MM-YYYY'),
+ 		DOB:moment(req.body.date).format('DD-MM'),
  		Mobile:req.body.number
  	}
- 	var datat=moment().format('DD-MM-YYYY');
+ 	var datat=moment().format('DD-MM');
  	console.log(datat);
  	colec.insert(Data,function(err,docs) {
  		if(err){
@@ -33,6 +33,7 @@
  })
  /*retrive data*/
  router.get('/getdetailes',function(req,res){
+
 
  	// colec.find({}.sort({'date':-1}),function(err,docs){
  		colec.find({},function(err,docs){
